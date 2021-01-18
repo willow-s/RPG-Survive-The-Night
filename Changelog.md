@@ -6,3 +6,4 @@ Pre-release January 18 2021
 - added numerical lists
   - seen in main.py
   - subject to future changes
+- edited README

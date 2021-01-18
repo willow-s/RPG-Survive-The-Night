@@ -3,4 +3,4 @@
 - Goal is to survive 1 night in the forest. There are multiple endings.
 
 ## How to run game
-- To start game, press 'Run' button.
+- To start game, click 'Run' button.
