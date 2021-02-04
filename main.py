@@ -55,11 +55,13 @@ weapons_inventory = {
                                 },
                       'stick': {
                                 'description': 'It is a long wooden '
-                                'rod, it could be useful...'
+                                'rod, it could be useful...',
+                                'health': 'not applicable'
                                 },
                       'tarp': {
                                'description': 'This would be great '
-                               'for a shelter...'
+                               'for a shelter...',
+                               'health': 'not applicable'
                                }
                       }
 
@@ -128,7 +130,7 @@ def north():
     # Write a prompt for the user
     north_prompt = ("\nWhat would you like to do?")
     # write instructions for the user on what actions they can perform
-    instructions = ("Valid actions for current location:\nGo in \
+    instructions = ("\nValid actions for current location:\nGo in \
 the following direction:\n* south\nPerform one of these actions:\
 \n* look around\n* fight\n* build\n* go fishing\n* eat\n* pick up\n\
 * open inventory\n* quit game\n")
@@ -203,10 +205,10 @@ def south():
     # Write a prompt for the user
     south_prompt = ("\nWhat would you like to do?")
     # write instructions for the user on what actions they can perform
-    instructions = ("Valid actions for current location:\nGo in \
+    instructions = ("\nValid actions for current location:\nGo in \
 the following direction:\n* north\nPerform one of these actions:\
 \n* look around\n* fight\n* build\n* go fishing\n* eat\n* pick up\n\
-*open inventory\n* quit game\n")
+* open inventory\n* quit game\n")
     # print instructions and input statement
     print(instructions)
     south_menu = input(south_prompt)
@@ -278,10 +280,10 @@ def east():
     # Write a prompt for the user
     east_prompt = ("\nWhat would you like to do?")
     # write instructions for the user on what actions they can perform
-    instructions = ("Valid actions for current location:\nGo in \
+    instructions = ("\nValid actions for current location:\nGo in \
 the following direction:\n* west\nPerform one of these actions:\
 \n* look around\n* fight\n* build\n* go fishing\n* eat\n* pick up\n\
-*open inventory\n* quit game\n")
+* open inventory\n* quit game\n")
     # print instructions and input statement
     print(instructions)
     east_menu = input(east_prompt)
@@ -353,7 +355,7 @@ def west():
     # Write a prompt for the user
     west_prompt = ("\nWhat would you like to do?")
     # write instructions for the user on what actions they can perform
-    instructions = ("Valid actions for current location:\nGo in \
+    instructions = ("\nValid actions for current location:\nGo in \
 the following direction:\n* east\nPerform one of these actions:\
 \n* look around\n* fight\n* build\n* go fishing\n* eat\n* pick up\n\
 * open inventory\n* quit game\n")
@@ -614,8 +616,8 @@ contents:")
 
     # open the weapons inventory
     elif inventory_open.lower() == 'tools and weapons':
-        print("\nYou opened your weapons inventory, these are it's \
-contents:")
+        print("\nYou opened your tools and weapons inventory, these are \
+it's contents:")
         for item, item_info in weapons_inventory.items():
             # print the inventory
             print_weapons_inventory()
@@ -627,7 +629,7 @@ contents:")
         print("\nYou opened both of your inventories, these are it's \
 contents:")
         # open weapons inventory
-        print("\nYour weapons include:")
+        print("\nYour tools and weapons include:")
         for item, item_info in weapons_inventory.items():
             # print the inventory
             print_weapons_inventory()

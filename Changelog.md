@@ -29,3 +29,4 @@ Pre-release February 3 2021
 - added more detail to comments
 - added header comments that explain a large section of code
 - made it so that the ser can restart the game from the main menu portion of the directory
+- fixed spacing mistakes
