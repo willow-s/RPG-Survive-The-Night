@@ -34,3 +34,4 @@ Pre-release February 3 2021
 Pre-release February 5 2021
 - added while loops to all functions so that it ran smoothly, while also being more organized
 - added continue to functions where needed
+- made the ENTIRE program quittable with exit()

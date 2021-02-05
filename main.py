@@ -3,15 +3,11 @@
 # date created : Jan 27 2021
 # description : RPG game.
 
-
 # import the in game inventory
 from in_game_inventory import *
 
 # here is the in-game inventory
-items = {'fists': {'description': 'The most basic weapon',
-                   'health': '-2'
-                   }
-         }
+items = {'fists': {'description': 'The most basic weapon', 'health': '-2'}}
 
 # list of found items
 found_items = []
@@ -21,105 +17,108 @@ found_items = []
 # food inventory
 food_inventory = {
     'berries': {
-                'description': 'A delicious, blue fruit',
-                'health': '+2'
-                },
+        'description': 'A delicious, blue fruit',
+        'health': '+2'
+    },
     'fish': {
-             'description': 'A meaty animal that came from the water',
-             'health': '+5'
-              },
+        'description': 'A meaty animal that came from the water',
+        'health': '+5'
+    },
     'water': {
-              'description': 'drink',
-              'health': '+2'
-              },
+        'description': 'drink',
+        'health': '+2'
+    },
     'apple': {
-              'description': 'A red fruit',
-              'health': '+6'
-              }
+        'description': 'A red fruit',
+        'health': '+6'
     }
-
+}
 
 # weapons inventory
 weapons_inventory = {
-                      'sword': {
-                                'description': 'A long sharp thing',
-                                'health': '8'
-                                },
-                      'shank': {
-                                'description': 'A really sharp stick',
-                                'health': '5'
-                                },
-                      'fists': {
-                                'description': 'The most basic weapon',
-                                'health': '2'
-                                },
-                      'stick': {
-                                'description': 'It is a long wooden '
-                                'rod, it could be useful...',
-                                'health': 'not applicable'
-                                },
-                      'tarp': {
-                               'description': 'This would be great '
-                               'for a shelter...',
-                               'health': 'not applicable'
-                               }
-                      }
-
+    'sword': {
+        'description': 'A long sharp thing',
+        'health': '8'
+    },
+    'shank': {
+        'description': 'A really sharp stick',
+        'health': '5'
+    },
+    'fists': {
+        'description': 'The most basic weapon',
+        'health': '2'
+    },
+    'stick': {
+        'description': 'It is a long wooden '
+        'rod, it could be useful...',
+        'health': 'not applicable'
+    },
+    'tarp': {
+        'description': 'This would be great '
+        'for a shelter...',
+        'health': 'not applicable'
+    }
+}
 
 # dictionary of locations
 locations = {
-              'The river': {
-                            'Type': 'Food',
-                            'description': 'a place to find fresh food \
+    'The river': {
+        'Type': 'Food',
+        'description': 'a place to find fresh food \
 and water.'
-                            },
-              'The forest': {
-                             'Type': 'Supply and Danger',
-                             'description': 'a place to find \
+    },
+    'The forest': {
+        'Type': 'Supply and Danger',
+        'description': 'a place to find \
 supplies, but also where monsters creep.'
-                             },
-              'The clearing': {
-                               'Type': 'Camp',
-                               'description': 'a peaceful place to \
+    },
+    'The clearing': {
+        'Type':
+        'Camp',
+        'description':
+        'a peaceful place to \
 build camp, but watch out for nightfall...'
-                               },
-              'The mountains': {
-                                'Type': 'Danger and Lookout',
-                                'description': 'a great place to take \
+    },
+    'The mountains': {
+        'Type':
+        'Danger and Lookout',
+        'description':
+        'a great place to take \
 in your surroundings, but beware of the sasquatch!'
-                                },
-              'The Bear Cave': {
-                                'Type': 'Supply and Danger',
-                                'description': 'They tend to collect \
+    },
+    'The Bear Cave': {
+        'Type':
+        'Supply and Danger',
+        'description':
+        'They tend to collect \
 useful things left behind by campers... but be careful not to wake \
 them.'
-                                }
-              }
-
+    }
+}
 
 # dictionary of all entities
 characters = {
-              'Adult Bear': {
-                             'strength': 6,
-                             'speed': 6
-                             },
-              'Baby Bear': {
-                            'strength': 1,
-                            'speed': 1
-                            },
-              'Sasquatch': {
-                            'strength': 8,
-                            'speed': 3
-                            },
-              'Monster': {
-                          'strength': 10,
-                          'speed': 10
-                          }
-              }
-
+    'Adult Bear': {
+        'strength': 6,
+        'speed': 6
+    },
+    'Baby Bear': {
+        'strength': 1,
+        'speed': 1
+    },
+    'Sasquatch': {
+        'strength': 8,
+        'speed': 3
+    },
+    'Monster': {
+        'strength': 10,
+        'speed': 10
+    }
+}
 
 # ALL OF THE DIRECTIONS AND ACTIONS THE USER CAN CHOOSE TO TAKE
 # THE INVENTORY IS ACCESSIBLE AT ANY TIME
+
 
 # GO NORTH
 # print a message to notify the user that the north input was valid
@@ -381,7 +380,7 @@ the following direction:\n* east\nPerform one of these actions:\
                 directories()
             # do not quit game, continue game
             elif quit_game == 'no':
-              continue
+                continue
             # input error
             else:
                 print("Sorry I didn't understand that.")
@@ -517,6 +516,7 @@ one of the following directions:\n* north\n* south\n* east\n\
 
 # THE CODE AND FUNCTIONS FOR THE MAIN MENU DIRECTORY
 
+
 # The code for exiting all directories
 def exit_directory():
     """If the user types to exit, then exit the inventory."""
@@ -531,6 +531,7 @@ def exit_directory():
 
 
 # ALL CODE FOR INVENTORIES DIRECTORY
+
 
 # make program that will run through either food or weapons inventory
 # using interactive unput functions
@@ -624,6 +625,7 @@ Tools and Weapons, or Both? If you would like to exit, type exit.\n")
 
 # ALL CODE FOR LOCATIONS DIRECTORY
 
+
 # open the locations directory.
 def open_locations():
     """Open the list that shows the user all of the locations and their
@@ -650,6 +652,7 @@ possible locations and their information.\n")
 
 # ALL CODE FOR CHARACTERS DIRECTORY
 
+
 # print the information on the characters in the game.
 def characters_directory():
     """Opens the directory that shows the user all of the characters and
@@ -672,13 +675,15 @@ them.\n")
 
 # ALL CODE FOR GENERAL DIRECTORIES DIRECTORY
 
+
 # print an introduction to the directories
 def directories():
     """Will ask the user whether they want to look at their inventories,
     the characters, or the locations."""
     which_directory = ("\nOpened the menu.\nWhich directory would you \
 like to open? Inventories, Locations, or Characters?\nIf you would like \
-to start the game, type 'start game'.")
+to start the game, type 'start game'.\nIf you would like to quit the \
+program, type 'quit'.\n")
     while True:
         directory = input(which_directory)
         # open inventories
@@ -698,6 +703,10 @@ to start the game, type 'start game'.")
         elif directory.lower() == 'start game':
             print("\nStarting game...\n\nWelcome to the game!\n")
             open_simple_menu()
+        # quit the program
+        elif directory.lower() == 'quit':
+            print("Quitting program.")
+            exit("Program has been terminated.")
         # print input error
         else:
             print("\nSorry, I didn't understand that.")
