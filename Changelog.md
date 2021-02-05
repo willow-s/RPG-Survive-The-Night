@@ -30,3 +30,7 @@ Pre-release February 3 2021
 - added header comments that explain a large section of code
 - made it so that the ser can restart the game from the main menu portion of the directory
 - fixed spacing mistakes
+
+Pre-release February 5 2021
+- added while loops to all functions so that it ran smoothly, while also being more organized
+- added continue to functions where needed

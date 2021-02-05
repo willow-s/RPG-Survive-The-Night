@@ -134,67 +134,59 @@ def north():
 the following direction:\n* south\nPerform one of these actions:\
 \n* look around\n* fight\n* build\n* go fishing\n* eat\n* pick up\n\
 * open inventory\n* quit game\n")
-    # print instructions and input statement
-    print(instructions)
-    north_menu = input(north_prompt)
-    # go back south option
-    if north_menu.lower() == 'south':
-        print("\nGoing South!\n")
-    # look around action
-    elif north_menu.lower() == 'look around':
-        look_around()
-        north()
-    # fight action
-    elif north_menu.lower() == 'fight':
-        fight()
-        north()
-    # build action
-    elif north_menu.lower() == 'build':
-        build()
-        north()
-    # go fishing action
-    elif north_menu.lower() == 'go fishing':
-        go_fishing()
-        north()
-    # eat action
-    elif north_menu.lower() == 'eat':
-        eat()
-        north()
-    # pick up action
-    elif north_menu.lower() == 'pick up':
-        pick_up()
-        north()
-    # open the inventory
-    elif north_menu.lower() == 'open inventory':
-        if items == {}:
-            print("\nYour inventory is empty.\n")
-            north()
-        # using a loop, print the in-game inventory
-        for item, desc in items.items():
-            print("\n\nOpened your inventory.\n")
-            print(f"{item}:")
-            print(f"\tdescription: {desc['description']}")
-            print(f"\teffect on health: {desc['health']}\n")
-            north()
-    # Quit the game, open menu
-    elif north_menu.lower() == 'quit game':
-        # ask if the user really wants to quit
-        quit_game = input("\nAre you sure you want to quit? yes or no.\n")
-        # the user quits, open menu
-        if quit_game == 'yes':
-            print("Quitting game.")
-            directories()
-        # do not quit game, continue game
-        elif quit_game == 'no':
-            north()
+    while True:
+        # print instructions and input statement
+        print(instructions)
+        north_menu = input(north_prompt)
+        # go back south option
+        if north_menu.lower() == 'south':
+            print("\nGoing South!\n")
+            open_simple_menu()
+        # look around action
+        elif north_menu.lower() == 'look around':
+            look_around()
+        # fight action
+        elif north_menu.lower() == 'fight':
+            fight()
+        # build action
+        elif north_menu.lower() == 'build':
+            build()
+        # go fishing action
+        elif north_menu.lower() == 'go fishing':
+            go_fishing()
+        # eat action
+        elif north_menu.lower() == 'eat':
+            eat()
+        # pick up action
+        elif north_menu.lower() == 'pick up':
+            pick_up()
+        # open the inventory
+        elif north_menu.lower() == 'open inventory':
+            if items == {}:
+                print("\nYour inventory is empty.\n")
+            # using a loop, print the in-game inventory
+            for item, desc in items.items():
+                print("\n\nOpened your inventory.\n")
+                print(f"{item}:")
+                print(f"\tdescription: {desc['description']}")
+                print(f"\teffect on health: {desc['health']}\n")
+        # Quit the game, open menu
+        elif north_menu.lower() == 'quit game':
+            # ask if the user really wants to quit
+            quit_game = input("\nAre you sure you want to quit? yes or no.\n")
+            # the user quits, open menu
+            if quit_game == 'yes':
+                print("Quitting game.")
+                directories()
+            # do not quit game, continue game
+            elif quit_game == 'no':
+                continue
+            # input error
+            else:
+                print("Sorry I didn't understand that.")
         # input error
         else:
-            print("Sorry I didn't understand that.")
-            north()
-    # input error
-    else:
-        print("\nInvalid action!\n")
-        north()
+            print("\nInvalid action!\n")
 
 
 # GO SOUTH
@@ -209,67 +201,59 @@ def south():
 the following direction:\n* north\nPerform one of these actions:\
 \n* look around\n* fight\n* build\n* go fishing\n* eat\n* pick up\n\
 * open inventory\n* quit game\n")
-    # print instructions and input statement
-    print(instructions)
-    south_menu = input(south_prompt)
-    # go back north option
-    if south_menu.lower() == 'north':
-        print("\nGoing North!\n")
-    # look around action
-    elif south_menu.lower() == 'look around':
-        look_around()
-        south()
-    # fight action
-    elif south_menu.lower() == 'fight':
-        fight()
-        south()
-    # build action
-    elif south_menu.lower() == 'build':
-        build()
-        south()
-    # go fishing action
-    elif south_menu.lower() == 'go fishing':
-        go_fishing()
-        south()
-    # eat action
-    elif south_menu.lower() == 'eat':
-        eat()
-        south()
-    # pick up action
-    elif south_menu.lower() == 'pick up':
-        pick_up()
-        south()
-    # open the inventory
-    elif south_menu.lower() == 'open inventory':
-        if items == {}:
-            print("\nYour inventory is empty.\n")
-            south()
-        # using a loop, print the in-game inventory
-        for item, desc in items.items():
-            print("\n\nOpened your inventory.\n")
-            print(f"{item}:")
-            print(f"\tdescription: {desc['description']}")
-            print(f"\teffect on health: {desc['health']}\n")
-            south()
-    # Quit the game, open menu
-    elif south_menu.lower() == 'quit game':
-        # ask if the user really wants to quit
-        quit_game = input("\nAre you sure you want to quit? yes or no.\n")
-        # the user quits, open menu
-        if quit_game == 'yes':
-            print("Quitting game.")
-            directories()
-        # do not quit game, continue game
-        elif quit_game == 'no':
-            south()
+    while True:
+        # print instructions and input statement
+        print(instructions)
+        south_menu = input(south_prompt)
+        # go back north option
+        if south_menu.lower() == 'north':
+            print("\nGoing North!\n")
+            open_simple_menu()
+        # look around action
+        elif south_menu.lower() == 'look around':
+            look_around()
+        # fight action
+        elif south_menu.lower() == 'fight':
+            fight()
+        # build action
+        elif south_menu.lower() == 'build':
+            build()
+        # go fishing action
+        elif south_menu.lower() == 'go fishing':
+            go_fishing()
+        # eat action
+        elif south_menu.lower() == 'eat':
+            eat()
+        # pick up action
+        elif south_menu.lower() == 'pick up':
+            pick_up()
+        # open the inventory
+        elif south_menu.lower() == 'open inventory':
+            if items == {}:
+                print("\nYour inventory is empty.\n")
+            # using a loop, print the in-game inventory
+            for item, desc in items.items():
+                print("\n\nOpened your inventory.\n")
+                print(f"{item}:")
+                print(f"\tdescription: {desc['description']}")
+                print(f"\teffect on health: {desc['health']}\n")
+        # Quit the game, open menu
+        elif south_menu.lower() == 'quit game':
+            # ask if the user really wants to quit
+            quit_game = input("\nAre you sure you want to quit? yes or no.\n")
+            # the user quits, open menu
+            if quit_game == 'yes':
+                print("Quitting game.")
+                directories()
+            # do not quit game, continue game
+            elif quit_game == 'no':
+                continue
+            # input error
+            else:
+                print("Sorry I didn't understand that.")
         # input error
         else:
-            print("Sorry I didn't understand that.")
-            south()
-    # input error
-    else:
-        print("\nInvalid action!\n")
-        south()
+            print("\nInvalid action!\n")
 
 
 # GO EAST
@@ -284,67 +268,59 @@ def east():
 the following direction:\n* west\nPerform one of these actions:\
 \n* look around\n* fight\n* build\n* go fishing\n* eat\n* pick up\n\
 * open inventory\n* quit game\n")
-    # print instructions and input statement
-    print(instructions)
-    east_menu = input(east_prompt)
-    # go back west option
-    if east_menu.lower() == 'west':
-        print("\nGoing West!\n")
-    # look around action
-    elif east_menu.lower() == 'look around':
-        look_around()
-        east()
-    # fight action
-    elif east_menu.lower() == 'fight':
-        fight()
-        east()
-    # build action
-    elif east_menu.lower() == 'build':
-        build()
-        east()
-    # go fishing action
-    elif east_menu.lower() == 'go fishing':
-        go_fishing()
-        east()
-    # eat action
-    elif east_menu.lower() == 'eat':
-        eat()
-        east()
-    # pick up action
-    elif east_menu.lower() == 'pick up':
-        pick_up()
-        east()
-    # open the inventory
-    elif east_menu.lower() == 'open inventory':
-        if items == {}:
-            print("\nYour inventory is empty.\n")
-            east()
-        # using a loop, print the in-game inventory
-        for item, desc in items.items():
-            print("\n\nOpened your inventory.\n")
-            print(f"{item}:")
-            print(f"\tdescription: {desc['description']}")
-            print(f"\teffect on health: {desc['health']}\n")
-            east()
-    # Quit the game
-    elif east_menu.lower() == 'quit game':
-        # ask if the user really wants to quit
-        quit_game = input("\nAre you sure you want to quit? yes or no.\n")
-        # the user quits, open menu
-        if quit_game == 'yes':
-            print("Quitting game.")
-            directories()
-        # do not quit game, continue game
-        elif quit_game == 'no':
-            east()
+    while True:
+        # print instructions and input statement
+        print(instructions)
+        east_menu = input(east_prompt)
+        # go back west option
+        if east_menu.lower() == 'west':
+            print("\nGoing West!\n")
+            open_simple_menu()
+        # look around action
+        elif east_menu.lower() == 'look around':
+            look_around()
+        # fight action
+        elif east_menu.lower() == 'fight':
+            fight()
+        # build action
+        elif east_menu.lower() == 'build':
+            build()
+        # go fishing action
+        elif east_menu.lower() == 'go fishing':
+            go_fishing()
+        # eat action
+        elif east_menu.lower() == 'eat':
+            eat()
+        # pick up action
+        elif east_menu.lower() == 'pick up':
+            pick_up()
+        # open the inventory
+        elif east_menu.lower() == 'open inventory':
+            if items == {}:
+                print("\nYour inventory is empty.\n")
+            # using a loop, print the in-game inventory
+            for item, desc in items.items():
+                print("\n\nOpened your inventory.\n")
+                print(f"{item}:")
+                print(f"\tdescription: {desc['description']}")
+                print(f"\teffect on health: {desc['health']}\n")
+        # Quit the game
+        elif east_menu.lower() == 'quit game':
+            # ask if the user really wants to quit
+            quit_game = input("\nAre you sure you want to quit? yes or no.\n")
+            # the user quits, open menu
+            if quit_game == 'yes':
+                print("Quitting game.")
+                directories()
+            # do not quit game, continue game
+            elif quit_game == 'no':
+                continue
+            # input error
+            else:
+                print("Sorry I didn't understand that.")
         # input error
         else:
-            print("Sorry I didn't understand that.")
-            east()
-    # input error
-    else:
-        print("\nInvalid action!\n")
-        east()
+            print("\nInvalid action!\n")
 
 
 # GO WEST
@@ -359,67 +335,59 @@ def west():
 the following direction:\n* east\nPerform one of these actions:\
 \n* look around\n* fight\n* build\n* go fishing\n* eat\n* pick up\n\
 * open inventory\n* quit game\n")
-    # print instructions and input statement
-    print(instructions)
-    west_menu = input(west_prompt)
-    # go back east option
-    if west_menu.lower() == 'east':
-        print("\nGoing East!\n")
-    # look around action
-    elif west_menu.lower() == 'look around':
-        look_around()
-        west()
-    # fight action
-    elif west_menu.lower() == 'fight':
-        fight()
-        west()
-    # build action
-    elif west_menu.lower() == 'build':
-        build()
-        west()
-    # go fishing action
-    elif west_menu.lower() == 'go fishing':
-        go_fishing()
-        west()
-    # eat action
-    elif west_menu.lower() == 'eat':
-        eat()
-        west()
-    # pick up action
-    elif west_menu.lower() == 'pick up':
-        pick_up()
-        west()
-    # open the inventory
-    elif west_menu.lower() == 'open inventory':
-        if items == {}:
-            print("\nYour inventory is empty.\n")
-            west()
-        # using a loop, print the in-game inventory
-        for item, desc in items.items():
-            print("\n\nOpened your inventory.\n")
-            print(f"{item}:")
-            print(f"\tdescription: {desc['description']}")
-            print(f"\teffect on health: {desc['health']}\n")
-            west()
-        # You cannot open the menu
-    elif west_menu.lower() == 'quit game':
-        # ask if the user really wants to quit
-        quit_game = input("\nAre you sure you want to quit? yes or no.\n")
-        # the user quits, open menu
-        if quit_game == 'yes':
-            print("Quitting game.")
-            directories()
-        # do not quit game, continue game
-        elif quit_game == 'no':
-            west()
+    while True:
+        # print instructions and input statement
+        print(instructions)
+        west_menu = input(west_prompt)
+        # go back east option
+        if west_menu.lower() == 'east':
+            print("\nGoing East!\n")
+            open_simple_menu()
+        # look around action
+        elif west_menu.lower() == 'look around':
+            look_around()
+        # fight action
+        elif west_menu.lower() == 'fight':
+            fight()
+        # build action
+        elif west_menu.lower() == 'build':
+            build()
+        # go fishing action
+        elif west_menu.lower() == 'go fishing':
+            go_fishing()
+        # eat action
+        elif west_menu.lower() == 'eat':
+            eat()
+        # pick up action
+        elif west_menu.lower() == 'pick up':
+            pick_up()
+        # open the inventory
+        elif west_menu.lower() == 'open inventory':
+            if items == {}:
+                print("\nYour inventory is empty.\n")
+            # using a loop, print the in-game inventory
+            for item, desc in items.items():
+                print("\n\nOpened your inventory.\n")
+                print(f"{item}:")
+                print(f"\tdescription: {desc['description']}")
+                print(f"\teffect on health: {desc['health']}\n")
+            # You cannot open the menu
+        elif west_menu.lower() == 'quit game':
+            # ask if the user really wants to quit
+            quit_game = input("\nAre you sure you want to quit? yes or no.\n")
+            # the user quits, open menu
+            if quit_game == 'yes':
+                print("Quitting game.")
+                directories()
+            # do not quit game, continue game
+            elif quit_game == 'no':
+              continue
+            # input error
+            else:
+                print("Sorry I didn't understand that.")
         # input error
         else:
-            print("Sorry I didn't understand that.")
-            west()
-    # input error
-    else:
-        print("\nInvalid action!\n")
-        west()
+            print("\nInvalid action!\n")
 
 
 # LOOK AROUND
@@ -544,6 +512,7 @@ one of the following directions:\n* north\n* south\n* east\n\
         # input error
         else:
             print("\nInvalid action!\n")
+            continue
 
 
 # THE CODE AND FUNCTIONS FOR THE MAIN MENU DIRECTORY
@@ -552,12 +521,13 @@ one of the following directions:\n* north\n* south\n* east\n\
 def exit_directory():
     """If the user types to exit, then exit the inventory."""
     exit_dir = ("\n When you are done here, type exit.\n")
-    ex_dir = input(exit_dir)
-    if ex_dir.lower() == 'exit':
-        directories()
-    else:
-        print("Sorry, I didn't understand that.")
-        exit_directory()
+    while True:
+        ex_dir = input(exit_dir)
+        if ex_dir.lower() == 'exit':
+            directories()
+        else:
+            print("Sorry, I didn't understand that.")
+            continue
 
 
 # ALL CODE FOR INVENTORIES DIRECTORY
@@ -572,83 +542,84 @@ def open_general_inventory():
 you can find all of the possible collectible items in the game.")
     which_inventory = (" Which inventory would you like to open? Food, \
 Tools and Weapons, or Both? If you would like to exit, type exit.\n")
-    inventory_open = input(which_inventory)
+    while True:
+        inventory_open = input(which_inventory)
 
-    # This will be the program to print each inventory
-    def print_food_inventory():
-        """Open the food inventory"""
-        print(f"\n\t{item}:")
-        description = f"description: {item_info['description']}"
-        health = f"effect on health: {item_info['health']}"
-        print(f"\t\t{description}\n\t\t{health}")
+        # This will be the program to print each inventory
+        def print_food_inventory():
+            """Open the food inventory"""
+            print(f"\n\t{item}:")
+            description = f"description: {item_info['description']}"
+            health = f"effect on health: {item_info['health']}"
+            print(f"\t\t{description}\n\t\t{health}")
 
-    # program to print each weapon
-    def print_weapons_inventory():
-        """Open the weapons inventory"""
-        print(f"\n\t{item}:")
-        description = f"description: {item_info['description']}"
-        health = f"damage: {item_info['health']}"
-        print(f"\t\t{description}\n\t\t{health}")
+        # program to print each weapon
+        def print_weapons_inventory():
+            """Open the weapons inventory"""
+            print(f"\n\t{item}:")
+            description = f"description: {item_info['description']}"
+            health = f"damage: {item_info['health']}"
+            print(f"\t\t{description}\n\t\t{health}")
 
-    # The program to exit each inventory and rerun open_general_inventory
-    # in order to ask the user again which inventory to open
-    def exit_inventory():
-        """Exit the inventory and reenter the inventory directory where
-        the user is asked which inventory to open."""
-        exit = ("\nWhen you are done, type exit.\n")
-        leave = (input(exit))
-        if leave.lower() == 'exit':
-            print()
-            open_general_inventory()
-        else:
-            print("\nSorry I didn't understand that.")
+        # The program to exit each inventory and rerun open_general_inventory
+        # in order to ask the user again which inventory to open
+        def exit_inventory():
+            """Exit the inventory and reenter the inventory directory where
+            the user is asked which inventory to open."""
+            exit = ("\nWhen you are done, type exit.\n")
+            leave = (input(exit))
+            if leave.lower() == 'exit':
+                print()
+                open_general_inventory()
+            else:
+                print("\nSorry I didn't understand that.")
+                exit_inventory()
+
+        # open the food inventory
+        if inventory_open.lower() == 'food':
+            print("\nYou opened your food inventory, these are it's \
+    contents:")
+            for item, item_info in food_inventory.items():
+                # print the food inventory
+                print_food_inventory()
+            # tell how to exit the inventory
             exit_inventory()
 
-    # open the food inventory
-    if inventory_open.lower() == 'food':
-        print("\nYou opened your food inventory, these are it's \
-contents:")
-        for item, item_info in food_inventory.items():
-            # print the food inventory
-            print_food_inventory()
-        # tell how to exit the inventory
-        exit_inventory()
+        # open the weapons inventory
+        elif inventory_open.lower() == 'tools and weapons':
+            print("\nYou opened your tools and weapons inventory, these are \
+    it's contents:")
+            for item, item_info in weapons_inventory.items():
+                # print the inventory
+                print_weapons_inventory()
+            # tell how to exit the inventory
+            exit_inventory()
 
-    # open the weapons inventory
-    elif inventory_open.lower() == 'tools and weapons':
-        print("\nYou opened your tools and weapons inventory, these are \
-it's contents:")
-        for item, item_info in weapons_inventory.items():
-            # print the inventory
-            print_weapons_inventory()
-        # tell how to exit the inventory
-        exit_inventory()
+        # open both inventories at once
+        elif inventory_open.lower() == 'both':
+            print("\nYou opened both of your inventories, these are it's \
+    contents:")
+            # open weapons inventory
+            print("\nYour tools and weapons include:")
+            for item, item_info in weapons_inventory.items():
+                # print the inventory
+                print_weapons_inventory()
+            # open food inventory
+            print("\nYour foods include:")
+            for item, item_info in food_inventory.items():
+                # print the food inventory
+                print_food_inventory()
+            # tell how to exit the inventory
+            exit_inventory()
 
-    # open both inventories at once
-    elif inventory_open.lower() == 'both':
-        print("\nYou opened both of your inventories, these are it's \
-contents:")
-        # open weapons inventory
-        print("\nYour tools and weapons include:")
-        for item, item_info in weapons_inventory.items():
-            # print the inventory
-            print_weapons_inventory()
-        # open food inventory
-        print("\nYour foods include:")
-        for item, item_info in food_inventory.items():
-            # print the food inventory
-            print_food_inventory()
-        # tell how to exit the inventory
-        exit_inventory()
+        elif inventory_open.lower() == 'exit':
+            directories()
 
-    elif inventory_open.lower() == 'exit':
-        directories()
-
-    # for if the user types in an unrecognizeable command
-    else:
-        print("\nSorry I didnt understand that.\n")
-        # rerun the whole inventory program
-        open_general_inventory()
+        # for if the user types in an unrecognizeable command
+        else:
+            print("\nSorry I didnt understand that.\n")
+            # rerun the whole inventory program
+            continue
 
 
 # ALL CODE FOR LOCATIONS DIRECTORY
@@ -708,28 +679,29 @@ def directories():
     which_directory = ("\nOpened the menu.\nWhich directory would you \
 like to open? Inventories, Locations, or Characters?\nIf you would like \
 to start the game, type 'start game'.")
-    directory = input(which_directory)
-    # open inventories
-    if directory.lower() == 'inventories':
-        print("\n\n")
-        open_general_inventory()
-    # open locations
-    elif directory.lower() == 'locations':
-        print("\n\n")
-        print()
-        open_locations()
-    # open characters
-    elif directory.lower() == 'characters':
-        print("\n\n")
-        characters_directory()
-    # return to actions
-    elif directory.lower() == 'start game':
-        print("\nStarting game...\n\n")
-        open_simple_menu()
-    # print input error
-    else:
-        print("\nSorry, I didn't understand that.")
-        directories()
+    while True:
+        directory = input(which_directory)
+        # open inventories
+        if directory.lower() == 'inventories':
+            print("\n\n")
+            open_general_inventory()
+        # open locations
+        elif directory.lower() == 'locations':
+            print("\n\n")
+            print()
+            open_locations()
+        # open characters
+        elif directory.lower() == 'characters':
+            print("\n\n")
+            characters_directory()
+        # return to actions
+        elif directory.lower() == 'start game':
+            print("\nStarting game...\n\nWelcome to the game!\n")
+            open_simple_menu()
+        # print input error
+        else:
+            print("\nSorry, I didn't understand that.")
+            continue
 
 
 # START THE GAME
