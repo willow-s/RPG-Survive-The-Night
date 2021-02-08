@@ -35,3 +35,12 @@ Pre-release February 5 2021
 - added while loops to all functions so that it ran smoothly, while also being more organized
 - added continue to functions where needed
 - made the ENTIRE program quittable with exit()
+
+Pre release February 8 2021
+- added a new file called main_menu and moved everything for the directories into there
+- removed the function open_simple_menu() and turned it into the main file, which uses return to be returned to.
+- replaced all calls to open_simple_menu() with a return statement
+- created a new file called map
+- added a map that shows each tile and locations
+- added a map that shows each tile's type
+- added import statements to make each file accessible where they need to be.
