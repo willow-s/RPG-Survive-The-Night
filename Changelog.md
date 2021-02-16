@@ -44,3 +44,25 @@ Pre release February 8 2021
 - added a map that shows each tile and locations
 - added a map that shows each tile's type
 - added import statements to make each file accessible where they need to be.
+
+Pre-release February 11 2021
+- added parent and child classes to map and inventory.
+- made it so you can find items and add it to the inventory after looking around
+- removed pick up option and only made it available when an item is found.
+
+Pre-release February 12 2021
+- changed the quit game process so that you quit the game right away instead of going through the main menu.
+- removed the main menu because it is unnecessary.
+- added parent and child classes for the characters in a new character module
+- started making player and enemy interactions for the tiles.
+
+Pre-release February 15 2021
+- Added a player health bar that starts at 15
+- remove the fight() function because it is useless and doesn't actually get used
+- turned the main file into a separate file and added a function that works for the center tile (the clearing) to make it callable into the main file
+- added a welcome screen to the now empty main tile that introduces the game, how it works, and the rules
+- made a new module with the player health and hours left so that I can use them as global variables
+- added an eat function that will open the inventory and will allow the player to replenish their inventory
+- made it so that the player can collect water from the river
+- made it so that the player can lose health by being attacked
+- made an hours left variable that starts at 12 hours, then once there are 7 hours left, it will start the night time, and then when there are 0 hours left, the game will end.
