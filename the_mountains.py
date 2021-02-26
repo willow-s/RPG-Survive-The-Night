@@ -1,3 +1,6 @@
+"""This will run when the player goes north ONLY if they haven't
+already killed the sasquatch"""
+
 # import characters and character classes
 from characters import *
 # import all endings
@@ -19,52 +22,59 @@ def sasquatch_attack():
     print()
     t.sleep(2)
     print(sasquatch)
+
+    # use a loop to ask the player if they want to run, fight, or
+    # give up
     while True:
         t.sleep(2)
         # ask the player if they want to fight, run or give up
         action = input("\nWhat would you like to do? Run, fight, or "
                        "give up?")
         # player runs
-        if action == 'run':
+        if action.lower() == 'run':
             t.sleep(1)
             # player dies
             death_ending()
         # player fights
-        elif action == 'fight':
+        elif action.lower() == 'fight':
             t.sleep(1)
             # using a loop, print the in-game inventory
             print("\n\nOpened your inventory.\n")
             for item, desc in items.items():
-                t.sleep(1)
                 print(f"{item}:")
                 print(f"\tdescription: {desc['description']}")
                 print(f"\teffect on health: {desc['health']}\n")
+
+            # use a loop to ask the player which weapon to use
             while True:
                 t.sleep(1)
                 # ask the user which weapon to use
                 weapon = input("\nWhat item would you like to use?")
+
                 # player chooses shank
-                if weapon == 'shank' and 'shank' in items:
+                if weapon.lower() == 'shank' and 'shank' in items:
                     t.sleep(2)
                     print("\nYou take a swing at your opponent and "
                           "strike the sasquatch in the side. It has "
                           "3 health remaining. The sasquatch lifts "
                           "you and tosses you away with ease. You run"
-                          "at the sasquatch and stab it directly in "
+                          " at the sasquatch and stab it directly in "
                           "the stomach. It falls to the ground. You"
                           " have won this battle.")
-                    # lower the player's health by 4
+                    # player health - 4
                     ph.player_health -= 4
-                    print(f"\nYour health is at {ph.player_health}")
                     # if the player's health is 0, die
                     if ph.player_health <= 0:
                         # player dies
                         t.sleep(2)
                         print("\nYour health is at 0.")
                         death_ending()
+                    # show player their health
+                    print(f"\nYour health is at {ph.player_health}")
                     return
+
                 # player chooses fists
-                elif weapon == 'fists':
+                elif weapon.lower() == 'fists':
                     t.sleep(2)
                     print("\nYou flail your fist at the sasquatch "
                           "and hit it in the stomach, but it did "
@@ -73,18 +83,21 @@ def sasquatch_attack():
                     t.sleep(1)
                     # player dies
                     death_ending()
+
                 # invalid input
                 else:
                     t.sleep(1)
                     print("That is not a valid weapon")
                     continue
+
         # player gives up
-        elif action == 'give up':
+        elif action.lower() == 'give up':
             t.sleep(1)
             # player dies
-            death_ending()
+            give_up_ending()
+
         # invalid input
         else:
             t.sleep(1)
-            print("\nThat's not a valid action.")
+            print("\nThat is not a valid action.")
             continue

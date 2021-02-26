@@ -16,7 +16,7 @@ Pre-release January 27 2021
 - Made all dictionaries into an interactive directory system
 
 Pre-release February 2 2021
-- added descriptions to all functions
+- added descriptions to all functions in the interactive directory
 
 Pre-release February 3 2021
 - added a menu of possible actions that the user can take
@@ -28,7 +28,7 @@ Pre-release February 3 2021
 - moved all lists and dictionaries to the tops of their respective files
 - added more detail to comments
 - added header comments that explain a large section of code
-- made it so that the ser can restart the game from the main menu portion of the directory
+- made it so that the user can restart the game from the main menu portion of the directory
 - fixed spacing mistakes
 
 Pre-release February 5 2021
@@ -66,3 +66,49 @@ Pre-release February 15 2021
 - made it so that the player can collect water from the river
 - made it so that the player can lose health by being attacked
 - made an hours left variable that starts at 12 hours, then once there are 7 hours left, it will start the night time, and then when there are 0 hours left, the game will end.
+
+Pre-release February 22 2021
+- started the actual night time
+- made sure all if statements accepted all cases
+- made it so that when it is night time and if the player has not yet built a shelter, the player can build a shelter
+- added the code for if the shelter is built
+- added a function for a monster fight
+- made it so the player can climb a tree
+- the player can quit the game during night time
+- the player can eat during night time
+- added another food called mysterious meat that sets player health back to 15.
+- made it so that the player could sleep, but only once
+- made it so that the player could feel around for dry sticks and then build a fire.
+
+Pre-release February 24 2021
+- changed all else statements to react the same
+- added comments
+- added bear attack to night time
+- added the functions that will run if the player does not build a shelter
+- added more attacks
+- made it so player can build fire and sleep if they have no build a shelter, but changed it so that you cannot sleep for as long and you take damage because it is not comfortable.
+
+Pre-release February 25 2021
+- fixed a variable for an if/elif/else loop
+- fixed some print statements and spelling mistakes
+- made it so that the player can view their health at almost any time in the game
+- added more text to elif and else statements for when the player types in something that isn't valid, they will receive an explanation for why it is not valid
+- finished the night time
+- made all the possible actions for night time
+- used random integers to decide the fate of the player
+- mended broken loops
+- made the player able to open their inventory during the night
+- made the inventory print all as one rather than item by item
+- fixed a bug that let the player sleep more than one time
+- fixed a bug that let the player build more than one fire
+- fixed a bug that let the player almost build a shelter without the correct materials and ended with an error
+- moved the fight functions to a separate module
+- tells the player that there is nothing to pick up if the player looks around and doesn't find anything
+- added more classes to the in game inventory and the characters so that the sentences are gramatically correct.
+
+Pre-release February 26 2021
+- for the number of hours until dawn during the night, added an if/else statement that would print 'There is 1 hour until dawn' instead of 'There are 1 hours until dawn'
+- fixed a spelling mistake
+
+Version 1.0 
+- released the game
